@@ -3,6 +3,7 @@ package model;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -18,14 +19,19 @@ import java.util.List;
         @ManyToOne
         private Client client;
 
-        @OneToMany
-        private List<OrderedItem> items;
+        @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
+        private List<OrderedItem> items = new ArrayList<>();
 
         public Order() {
         }
 
         public Order(Client client) {
             this.client = client;
+        }
+
+        public void addItem(OrderedItem item) {
+            item.setOrder(this);
+            this.items.add(item);
         }
 
         public Long getId() {

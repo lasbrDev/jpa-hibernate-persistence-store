@@ -4,11 +4,11 @@ import model.Category;
 
 import javax.persistence.EntityManager;
 
-    public class CategoryDao {
+    public class CategoryDAO {
 
         private EntityManager em;
 
-        public CategoryDao(EntityManager em) {
+        public CategoryDAO(EntityManager em) {
             this.em = em;
         }
 
