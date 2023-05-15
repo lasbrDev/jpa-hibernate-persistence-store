@@ -13,7 +13,7 @@ import java.util.List;
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
-        private BigDecimal amount;
+        private BigDecimal amount = BigDecimal.ZERO;
         private LocalDate date = LocalDate.now();
 
         @ManyToOne
@@ -32,6 +32,7 @@ import java.util.List;
         public void addItem(OrderedItem item) {
             item.setOrder(this);
             this.items.add(item);
+            this.amount = this.amount.add(item.getValue());
         }
 
         public Long getId() {

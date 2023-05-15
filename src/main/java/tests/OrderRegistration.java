@@ -9,9 +9,11 @@ import util.JPAUtil;
 
 import javax.persistence.EntityManager;
 import java.math.BigDecimal;
+import java.util.List;
+import java.util.Objects;
 
 
-    public class OrderRegistration {
+public class OrderRegistration {
 
         public static void main(String[] args) {
             popularDatabase();
@@ -31,6 +33,16 @@ import java.math.BigDecimal;
             orderDAO.register(order);
 
             em.getTransaction().commit();
+
+            BigDecimal amount = orderDAO.totalValueSold();
+            System.out.println("Amount " + amount);
+
+            List<Object[]> report = orderDAO.salesReport();
+            for (Object[] objects : report) {
+                System.out.println(objects[0]);
+                System.out.println(objects[1]);
+                System.out.println(objects[2]);
+            }
         }
 
         private static void popularDatabase() {
@@ -38,7 +50,7 @@ import java.math.BigDecimal;
             Product smartphone = new Product("Xiaomy Redmi", "Very cool",
                     new BigDecimal("800"), smartphones);
 
-            Client client = new Client("Luciano", "280.436.868-82");
+            Client client = new Client("Luciano", "123.456.789-10");
 
             EntityManager em = JPAUtil.getEntityManager();
             ProductDAO productDao = new ProductDAO(em);
