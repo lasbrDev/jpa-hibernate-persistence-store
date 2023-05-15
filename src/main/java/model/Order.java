@@ -3,8 +3,9 @@ package model;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
-    @Entity
+@Entity
     @Table(name = "orders")
     public class Order {
 
@@ -16,6 +17,9 @@ import java.time.LocalDate;
 
         @ManyToOne
         private Client client;
+
+        @OneToMany
+        private List<OrderedItem> items;
 
         public Order() {
         }
