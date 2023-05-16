@@ -13,9 +13,9 @@ import java.math.BigDecimal;
         @Column(name = "unit_price")
         private BigDecimal unitPrice;
         private int quantity;
-        @ManyToOne
+        @ManyToOne(fetch = FetchType.LAZY)
         private Request request;
-        @ManyToOne
+        @ManyToOne(fetch = FetchType.LAZY)
         private Product product;
 
         public RequestItem() {

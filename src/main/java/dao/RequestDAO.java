@@ -29,4 +29,9 @@ import java.util.List;
                     "GROUP BY product.name ORDER BY item.quantity DESC";
             return em.createQuery(jpql, SalesReportVo.class).getResultList();
         }
+
+        public Request searchRequestWithClient(Long id) {
+            return em.createQuery("SELECT p FROM Request p JOIN FETCH p.client WHERE p.id = :id",
+                    Request.class).setParameter("id", id).getSingleResult();
+        }
     }
