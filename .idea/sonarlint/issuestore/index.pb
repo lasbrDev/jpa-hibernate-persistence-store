@@ -11,5 +11,3 @@ R
 "src/main/java/dao/CategoryDAO.java,b/8/b864088d1c1a6b40aa5fbbd74ee9a775b3706ff3
 P
  src/main/java/dao/ClientDAO.java,0/f/0f9710e8bf628997dadb11ecd3fab7f4673fb6c9
-Q
-!src/main/java/dao/ProductDAO.java,5/7/577beacaef222b7951b9800fc2a498928c209797

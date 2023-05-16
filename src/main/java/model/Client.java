@@ -9,12 +9,19 @@ import javax.persistence.*;
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
-        private String name;
-        private String cpf;
+        @Embedded
+        private PersonalData personalData;
 
         public Client(String name, String cpf) {
-            this.name = name;
-            this.cpf = cpf;
+            this.personalData = new PersonalData(name, cpf);
+        }
+
+        public String getName() {
+            return this.personalData.getName();
+        }
+
+        public String getCpf() {
+            return this.personalData.getCpf();
         }
 
         public Client() {
@@ -28,19 +35,7 @@ import javax.persistence.*;
             this.id = id;
         }
 
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getCpf() {
-            return cpf;
-        }
-
-        public void setCpf(String cpf) {
-            this.cpf = cpf;
+        public PersonalData getPersonalData() {
+            return personalData;
         }
     }
