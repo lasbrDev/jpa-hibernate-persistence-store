@@ -47,7 +47,7 @@ import java.util.List;
                 report.forEach(System.out::println);
         }
 
-        private static void popularDatabase() {
+        static void popularDatabase() {
             Category smartphones = new Category("SMARTPHONES");
             Category videogames = new Category("VIDEOGAMES");
             Category computing = new Category("COMPUTING");

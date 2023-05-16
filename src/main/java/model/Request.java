@@ -17,7 +17,7 @@ import java.util.List;
         private BigDecimal amount = BigDecimal.ZERO;
         private LocalDate date = LocalDate.now();
 
-        @ManyToOne
+        @ManyToOne(fetch = FetchType.LAZY)
         private Client client;
 
         @OneToMany(mappedBy = "request", cascade = CascadeType.ALL)

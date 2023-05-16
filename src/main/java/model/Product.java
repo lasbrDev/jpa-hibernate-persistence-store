@@ -17,7 +17,7 @@ import java.time.LocalDate;
         private BigDecimal price;
         private LocalDate dateRegister = LocalDate.now();
 
-        @ManyToOne
+        @ManyToOne(fetch = FetchType.LAZY)
         private Category category;
 
         public Product() {
