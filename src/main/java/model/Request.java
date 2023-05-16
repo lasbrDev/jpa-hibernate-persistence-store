@@ -7,29 +7,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-    @Table(name = "orders")
-    public class Order {
+    @Table(name = "requests")
+    public class Request {
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
+        @Column(name = "amount")
         private BigDecimal amount = BigDecimal.ZERO;
         private LocalDate date = LocalDate.now();
 
         @ManyToOne
         private Client client;
 
-        @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
-        private List<OrderedItem> items = new ArrayList<>();
+        @OneToMany(mappedBy = "request", cascade = CascadeType.ALL)
+        private List<RequestItem> items = new ArrayList<>();
 
-        public Order() {
+        public Request() {
         }
 
-        public Order(Client client) {
+        public Request(Client client) {
             this.client = client;
         }
 
-        public void addItem(OrderedItem item) {
+        public void addItem(RequestItem item) {
             item.setOrder(this);
             this.items.add(item);
             this.amount = this.amount.add(item.getValue());

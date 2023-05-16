@@ -4,8 +4,8 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 
     @Entity
-    @Table(name = "ordered_items")
-    public class OrderedItem {
+    @Table(name = "requested_items")
+    public class RequestItem {
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,15 +14,15 @@ import java.math.BigDecimal;
         private BigDecimal unitPrice;
         private int quantity;
         @ManyToOne
-        private Order order;
+        private Request request;
         @ManyToOne
         private Product product;
 
-        public OrderedItem() {
+        public RequestItem() {
         }
-        public OrderedItem(int quantity, Order order, Product product) {
+        public RequestItem(int quantity, Request request, Product product) {
             this.quantity = quantity;
-            this.order = order;
+            this.request = request;
             this.unitPrice = product.getPrice();
             this.product = product;
         }
@@ -51,12 +51,12 @@ import java.math.BigDecimal;
             this.quantity = quantity;
         }
 
-        public Order getOrder() {
-            return order;
+        public Request getOrder() {
+            return request;
         }
 
-        public void setOrder(Order order) {
-            this.order = order;
+        public void setOrder(Request request) {
+            this.request = request;
         }
 
         public Product getProduct() {

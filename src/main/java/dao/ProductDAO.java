@@ -31,23 +31,23 @@ import java.util.List;
             return em.find(Product.class, id);
         }
 
-        public List<Product>searchAll() {
+        public List<Product> searchAll() {
             String jpql = "SELECT p FROM Product p";
             return em.createQuery(jpql, Product.class).getResultList();
         }
 
-        public List<Product>searchByName(String name) {
+        public List<Product> searchByName(String name) {
             String jpql = "SELECT p FROM Product p WHERE p.name = :name";
             return em.createQuery(jpql, Product.class).setParameter("name", name).getResultList();
         }
 
-        public List<Product>searchByCategoryName(String name) {
-            String jpql = "SELECT p FROM Product p WHERE p.category.name = :name";
-            return em.createQuery(jpql, Product.class).setParameter("name", name).getResultList();
+        public List<Product> searchByCategoryName(String name) {
+            return em.createNamedQuery("Product.productsByCategory", Product.class)
+                    .setParameter("name", name).getResultList();
         }
 
         public BigDecimal searchProductPriceWithName(String name) {
             String jpql = "SELECT p.price FROM Product p WHERE p.name = :name";
-            return em.createQuery(jpql,BigDecimal.class).setParameter("name", name).getSingleResult();
+            return em.createQuery(jpql, BigDecimal.class).setParameter("name", name).getSingleResult();
         }
     }
