@@ -21,7 +21,7 @@ import java.util.List;
         private Client client;
 
         @OneToMany(mappedBy = "request", cascade = CascadeType.ALL)
-        private List<RequestItem> items = new ArrayList<>();
+        private List<OrderItem> items = new ArrayList<>();
 
         public Order() {
         }
@@ -30,7 +30,7 @@ import java.util.List;
             this.client = client;
         }
 
-        public void addItem(RequestItem item) {
+        public void addItem(OrderItem item) {
             item.setOrder(this);
             this.items.add(item);
             this.amount = this.amount.add(item.getValue());

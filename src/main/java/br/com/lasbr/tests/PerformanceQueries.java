@@ -36,11 +36,11 @@ import java.math.BigDecimal;
             Client client = new Client("Luciano", "123.456.789-10");
 
             Order order = new Order(client);
-            order.addItem(new RequestItem(10, order, smartphone));
-            order.addItem(new RequestItem(40, order, videogame));
+            order.addItem(new OrderItem(10, order, smartphone));
+            order.addItem(new OrderItem(40, order, videogame));
 
             Order order1 = new Order(client);
-            order1.addItem(new RequestItem(2, order, macbook));
+            order1.addItem(new OrderItem(2, order, macbook));
 
             EntityManager em = JPAUtil.getEntityManager();
             ProductDAO productDAO = new ProductDAO(em);

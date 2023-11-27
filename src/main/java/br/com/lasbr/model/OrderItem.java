@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 
     @Entity
     @Table(name = "requested_items")
-    public class RequestItem {
+    public class OrderItem {
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,9 +18,9 @@ import java.math.BigDecimal;
         @ManyToOne(fetch = FetchType.LAZY)
         private Product product;
 
-        public RequestItem() {
+        public OrderItem() {
         }
-        public RequestItem(int quantity, Order request, Product product) {
+        public OrderItem(int quantity, Order request, Product product) {
             this.quantity = quantity;
             this.request = request;
             this.unitPrice = product.getPrice();
