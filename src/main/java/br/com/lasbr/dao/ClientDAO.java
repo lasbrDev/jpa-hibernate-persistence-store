@@ -1,6 +1,6 @@
-package dao;
+package br.com.lasbr.dao;
 
-import model.Client;
+import br.com.lasbr.model.Client;
 
 import javax.persistence.EntityManager;
 

@@ -1,11 +1,11 @@
-package tests;
+package br.com.lasbr.tests;
 
-import dao.CategoryDAO;
-import dao.ClientDAO;
-import dao.ProductDAO;
-import dao.RequestDAO;
-import model.*;
-import util.JPAUtil;
+import br.com.lasbr.dao.CategoryDAO;
+import br.com.lasbr.dao.ClientDAO;
+import br.com.lasbr.dao.ProductDAO;
+import br.com.lasbr.dao.RequestDAO;
+import br.com.lasbr.model.*;
+import br.com.lasbr.util.JPAUtil;
 
 import javax.persistence.EntityManager;
 

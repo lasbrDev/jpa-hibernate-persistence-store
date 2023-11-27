@@ -1,4 +1,6 @@
-package model;
+package br.com.lasbr.model;
+
+
 
 import javax.persistence.*;
 

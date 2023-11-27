@@ -1,10 +1,10 @@
-package tests;
+package br.com.lasbr.tests;
 
-import dao.CategoryDAO;
-import dao.ProductDAO;
-import model.Category;
-import model.Product;
-import util.JPAUtil;
+import br.com.lasbr.dao.CategoryDAO;
+import br.com.lasbr.dao.ProductDAO;
+import br.com.lasbr.model.Category;
+import br.com.lasbr.model.Product;
+import br.com.lasbr.util.JPAUtil;
 
 import javax.persistence.EntityManager;
 import java.math.BigDecimal;

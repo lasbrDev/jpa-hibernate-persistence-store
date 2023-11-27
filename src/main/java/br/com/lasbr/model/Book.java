@@ -1,4 +1,4 @@
-package model;
+package br.com.lasbr.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
