@@ -1,6 +1,6 @@
-package dao;
+package br.com.lasbr.dao;
 
-import model.Category;
+import br.com.lasbr.model.Category;
 
 import javax.persistence.EntityManager;
 
@@ -24,5 +24,4 @@ import javax.persistence.EntityManager;
             category = em.merge(category);
             this.em.remove(category);
         }
-
     }

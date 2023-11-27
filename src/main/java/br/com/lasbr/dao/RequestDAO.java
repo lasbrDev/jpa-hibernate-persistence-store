@@ -1,7 +1,7 @@
-package dao;
+package br.com.lasbr.dao;
 
 import model.Request;
-import vo.SalesReportVo;
+import br.com.lasbr.vo.SalesReportVo;
 
 import javax.persistence.EntityManager;
 import java.math.BigDecimal;

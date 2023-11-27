@@ -1,4 +1,4 @@
-package vo;
+package br.com.lasbr.vo;
 
 import java.time.LocalDate;
 

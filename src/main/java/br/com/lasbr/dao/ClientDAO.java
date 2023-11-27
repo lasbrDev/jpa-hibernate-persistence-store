@@ -1,4 +1,4 @@
-package dao;
+package br.com.lasbr.dao;
 
 import model.Client;
 

@@ -1,6 +1,6 @@
-package dao;
+package br.com.lasbr.dao;
 
-import model.Product;
+import br.com.lasbr.model.Product;
 
 import javax.persistence.EntityManager;
 import java.math.BigDecimal;
