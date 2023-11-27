@@ -4,9 +4,13 @@ import br.com.lasbr.dao.CategoryDAO;
 import br.com.lasbr.dao.ClientDAO;
 import br.com.lasbr.dao.RequestDAO;
 import br.com.lasbr.dao.ProductDAO;
+import br.com.lasbr.model.Client;
+import br.com.lasbr.model.Product;
+import br.com.lasbr.model.Request;
 import br.com.lasbr.model.RequestItem;
 import br.com.lasbr.util.JPAUtil;
 import br.com.lasbr.vo.SalesReportVo;
+import br.com.lasbr.model.Category;
 
 import javax.persistence.EntityManager;
 import java.math.BigDecimal;

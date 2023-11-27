@@ -58,7 +58,7 @@ import java.util.List;
         }
 
         public List<Product> searchByParameter(String name, BigDecimal price, LocalDate dateRegister) {
-            String jpql = "SELECT p FROM Product p WHERE 1=1 ";
+            String jpql = " SELECT p FROM Product p WHERE 1=1 ";
             if (name != null && !name.trim().isEmpty()) {
                 jpql = " AND p.name = :name ";
             }

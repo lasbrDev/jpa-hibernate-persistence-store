@@ -1,8 +1,5 @@
 package br.com.lasbr.model;
 
-import br.com.lasbr.model.Client;
-import br.com.lasbr.model.RequestItem;
-
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;

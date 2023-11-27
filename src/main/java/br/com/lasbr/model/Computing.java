@@ -1,5 +1,7 @@
 package model;
 
+import br.com.lasbr.model.Product;
+
 import javax.persistence.Entity;
 
     @Entity

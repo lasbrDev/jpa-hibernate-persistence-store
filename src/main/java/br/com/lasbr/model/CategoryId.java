@@ -1,11 +1,13 @@
 package br.com.lasbr.model;
 
 import javax.persistence.Embeddable;
+import java.io.Serial;
 import java.io.Serializable;
 
     @Embeddable
     public class CategoryId implements Serializable {
 
+        @Serial
         private static final long serialVersionUID = 4937120987269247064L;
         private String name;
         private String type;
