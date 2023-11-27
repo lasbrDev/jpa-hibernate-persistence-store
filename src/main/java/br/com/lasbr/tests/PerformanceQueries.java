@@ -17,7 +17,7 @@ import java.math.BigDecimal;
             popularDatabase();
             EntityManager em = JPAUtil.getEntityManager();
             RequestDAO requestDAO = new RequestDAO(em);
-            Request request = requestDAO.searchRequestWithClient(1l);
+            Order request = requestDAO.searchRequestWithClient(1l);
             em.close();
             System.out.println(request.getClient().getName());
         }
@@ -35,12 +35,12 @@ import java.math.BigDecimal;
 
             Client client = new Client("Luciano", "123.456.789-10");
 
-            Request request = new Request(client);
-            request.addItem(new RequestItem(10, request, smartphone));
-            request.addItem(new RequestItem(40, request, videogame));
+            Order order = new Order(client);
+            order.addItem(new RequestItem(10, order, smartphone));
+            order.addItem(new RequestItem(40, order, videogame));
 
-            Request request2 = new Request(client);
-            request2.addItem(new RequestItem(2, request, macbook));
+            Order order1 = new Order(client);
+            order1.addItem(new RequestItem(2, order, macbook));
 
             EntityManager em = JPAUtil.getEntityManager();
             ProductDAO productDAO = new ProductDAO(em);
@@ -60,8 +60,8 @@ import java.math.BigDecimal;
 
             clientDAO.register(client);
 
-            requestDAO.register(request);
-            requestDAO.register(request2);
+            requestDAO.register(order);
+            requestDAO.register(order1);
 
             em.getTransaction().commit();
             em.close();

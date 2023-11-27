@@ -60,13 +60,13 @@ import java.util.List;
         public List<Product> searchByParameter(String name, BigDecimal price, LocalDate dateRegister) {
             String jpql = " SELECT p FROM Product p WHERE 1=1 ";
             if (name != null && !name.trim().isEmpty()) {
-                jpql = " AND p.name = :name ";
+                jpql += " AND p.name = :name ";
             }
             if (price != null) {
-                jpql = " AND p.price = :price ";
+                jpql += " AND p.price = :price ";
             }
             if (dateRegister != null) {
-                jpql = " AND p.dateRegister = :dateRegister ";
+                jpql += " AND p.dateRegister = :dateRegister ";
             }
             TypedQuery<Product> query = em.createQuery(jpql, Product.class);
             if (name!= null && !name.trim().isEmpty()) {

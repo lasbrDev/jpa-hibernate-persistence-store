@@ -1,6 +1,4 @@
-package model;
-
-import br.com.lasbr.model.Product;
+package br.com.lasbr.model;
 
 import javax.persistence.Entity;
 

@@ -6,9 +6,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
-    @Table(name = "requests")
-    public class Request {
+    @Entity
+    @Table(name = "orders")
+    public class Order {
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,10 +23,10 @@ import java.util.List;
         @OneToMany(mappedBy = "request", cascade = CascadeType.ALL)
         private List<RequestItem> items = new ArrayList<>();
 
-        public Request() {
+        public Order() {
         }
 
-        public Request(Client client) {
+        public Order(Client client) {
             this.client = client;
         }
 

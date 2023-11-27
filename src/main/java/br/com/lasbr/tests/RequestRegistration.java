@@ -6,7 +6,7 @@ import br.com.lasbr.dao.RequestDAO;
 import br.com.lasbr.dao.ProductDAO;
 import br.com.lasbr.model.Client;
 import br.com.lasbr.model.Product;
-import br.com.lasbr.model.Request;
+import br.com.lasbr.model.Order;
 import br.com.lasbr.model.RequestItem;
 import br.com.lasbr.util.JPAUtil;
 import br.com.lasbr.vo.SalesReportVo;
@@ -31,11 +31,11 @@ import java.util.List;
 
             em.getTransaction().begin();
 
-            Request request = new Request(client);
+            Order request = new Order(client);
             request.addItem(new RequestItem(10, request, product));
             request.addItem(new RequestItem(40, request, product2));
 
-            Request request2 = new Request(client);
+            Order request2 = new Order(client);
             request.addItem(new RequestItem(2, request, product3));
 
             RequestDAO requestDAO = new RequestDAO(em);

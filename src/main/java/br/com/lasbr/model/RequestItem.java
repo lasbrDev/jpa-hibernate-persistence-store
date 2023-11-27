@@ -14,13 +14,13 @@ import java.math.BigDecimal;
         private BigDecimal unitPrice;
         private int quantity;
         @ManyToOne(fetch = FetchType.LAZY)
-        private Request request;
+        private Order request;
         @ManyToOne(fetch = FetchType.LAZY)
         private Product product;
 
         public RequestItem() {
         }
-        public RequestItem(int quantity, Request request, Product product) {
+        public RequestItem(int quantity, Order request, Product product) {
             this.quantity = quantity;
             this.request = request;
             this.unitPrice = product.getPrice();
@@ -51,11 +51,11 @@ import java.math.BigDecimal;
             this.quantity = quantity;
         }
 
-        public Request getOrder() {
+        public Order getOrder() {
             return request;
         }
 
-        public void setOrder(Request request) {
+        public void setOrder(Order request) {
             this.request = request;
         }
 
