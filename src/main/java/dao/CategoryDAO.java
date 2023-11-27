@@ -24,5 +24,4 @@ import javax.persistence.EntityManager;
             category = em.merge(category);
             this.em.remove(category);
         }
-
     }
